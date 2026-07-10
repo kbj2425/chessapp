@@ -1,12 +1,60 @@
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
-    margin-top: 50px;
+    background-color: #f7f9fa;
+    margin-top: 30px;
 }
+
 #status {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 20px;
     color: #333;
+}
+
+#board-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* 8x8 체스판 그리드 */
+#chess-board {
+    display: grid;
+    grid-template-columns: repeat(8, 55px);
+    grid-template-rows: repeat(8, 55px);
+    border: 4px solid #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* 체스판 칸 스타일 */
+.square {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px; /* 이모지 기물 크기 */
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+/* 밝은 칸, 어두운 칸 색상 */
+.light {
+    background-color: #f0d9b5;
+}
+.dark {
+    background-color: #b58863;
+}
+
+/* 선택된 칸 강조 */
+.selected {
+    background-color: #7ab87d !important;
+}
+
+/* 이동 가능한 칸 강조 */
+.highlight {
+    background-color: #aaa;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
 }
